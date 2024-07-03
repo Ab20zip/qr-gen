@@ -1,0 +1,28 @@
+{
+    "extends": [
+        "config:base",
+        ":semanticCommits",
+        ":semanticCommitTypeAll(Deps)",
+        ":semanticCommitScopeDisabled",
+        ":automergeAll",
+        ":automergeBranch",
+        ":disableDependencyDashboard",
+        ":pinVersions",
+        ":label(dependencies)"
+    ],
+    "packageRules": [
+        {
+            "matchUpdates": [
+                "npm:.*"
+            ]
+        },
+        {
+            "groupName": "Vite packages",
+            "matchUpdateTypes": "major",
+            "matchSourceUrlPrefixes": [
+                "https://github.com/vitejs/"
+            ]
+        }
+    ],
+    "automerge": true
+}
